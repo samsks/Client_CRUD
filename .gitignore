@@ -1,0 +1,17 @@
+# REACT APP
+
+node_modules
+DS_Store
+dist
+dist-ssr
+*.local
+
+
+# NODE APP
+
+*.idea/
+*.vscode/
+node_modules/
+build/
+tmp/
+temp/
