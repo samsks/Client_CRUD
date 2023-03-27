@@ -51,4 +51,4 @@ const dataSourceConfig = (): DataSourceOptions => {
 
 const AppDataSource = new DataSource(dataSourceConfig());
 
-export { AppDataSource };
+export default AppDataSource;

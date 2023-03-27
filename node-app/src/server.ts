@@ -1,19 +1,10 @@
 import app from "./app";
-import {AppDataSource} from "./data-source"
+import AppDataSource from "./data-source"
 import "dotenv/config"
 
 const BASE_URL = process.env.BASE_url || "https://localhost:"
-const PORT = process.env.PORT || 3000;
-
-// AppDataSource.initialize()
-//   .then(async () => {
-//     console.log('Database connected.');
-
-//     app.listen(PORT, () => {
-//       console.log(`App is running on https://localhost:${PORT}`);
-//     });
-//   })
-//   .catch((err) => console.error(err));
+const PORT = Number(process.env.PORT) || 3000;
+const API_DETAIL = process.env.API_DETAIL || "/api/v1";
 
 (async () => {
   await AppDataSource.initialize()
@@ -21,7 +12,7 @@ const PORT = process.env.PORT || 3000;
       console.log("Database connected");
 
       app.listen(PORT, () => {
-        console.log(`Server is running on ${BASE_URL + PORT}`);
+        console.log(`Server is running on ${BASE_URL + PORT + API_DETAIL}`);
       });
     })
     .catch((err) => {
