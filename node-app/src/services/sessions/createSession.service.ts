@@ -3,7 +3,7 @@ import { Repository } from "typeorm";
 import jwt from "jsonwebtoken";
 import { compare } from "bcryptjs";
 import { AppError } from "../../errors";
-import { Client } from "../../entities";
+import Client from "../../entities/client.entity";
 import { ISession, ISessionRes } from "../../interfaces/sessions";
 import "dotenv/config";
 

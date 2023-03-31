@@ -1,5 +1,5 @@
 import AppDataSource from "../../data-source";
-import { Client } from "../../entities";
+import Client from "../../entities/client.entity";
 import { hash } from "bcryptjs";
 import { IClientEntity, IClientReq, IClientRes } from "../../interfaces/clients";
 import { clientResSchema } from "../../serializers/clients";

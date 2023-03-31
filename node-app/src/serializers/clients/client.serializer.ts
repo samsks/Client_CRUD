@@ -4,7 +4,7 @@ const clientReqSchema = z.object({
   email: z.string().email().min(8).max(127),
   password: z.string().min(8).max(127),
   full_name: z.string().min(10).max(255),
-  phone: z.number(),
+  phone: z.number().or(z.string()),
 })
 
 const clientResSchema = clientReqSchema.extend({

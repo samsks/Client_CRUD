@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { AppError } from "../../errors";
-import { Client } from "../../entities";
+import Client from "../../entities/client.entity";
 import { Repository } from "typeorm";
 import { IRefresh, IRefreshRes } from "../../interfaces/sessions";
 import AppDataSource from "../../data-source";

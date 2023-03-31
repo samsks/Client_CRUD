@@ -12,6 +12,8 @@ import ensureIsValidDataMiddleware from "./formHandling/ensureIsValidData.middle
 import ensureClientEmailExistsMiddleware from "./validation/clients/ensureEmailExists.middleware";
 import ensureClientIdExistsMiddleware from "./validation/clients/ensureClientIdExists.middleware";
 import ensureValidUUIDMiddleware from "./validation/ensureValidUUID.middleware";
+import ensureContactPhoneExistsMiddleware from "./validation/clients/ensureContactPhoneExists.middleware";
+import ensureContactIdExistsMiddleware from "./validation/clients/ensureContactIdExists.middleware";
 
 
 // AUTHENTICATION
@@ -24,4 +26,4 @@ export { ensureClientOwnerOrAdmMiddleware, ensureIsAdmMiddleware }
 export {ensureIsValidDataMiddleware}
 
 // VALIDATIONS
-export {ensureClientEmailExistsMiddleware, ensureClientIdExistsMiddleware, ensureValidUUIDMiddleware}
+export {ensureClientEmailExistsMiddleware, ensureClientIdExistsMiddleware, ensureValidUUIDMiddleware, ensureContactPhoneExistsMiddleware, ensureContactIdExistsMiddleware}

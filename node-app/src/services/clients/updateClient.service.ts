@@ -1,5 +1,5 @@
 import AppDataSource from "../../data-source";
-import { Client } from "../../entities";
+import Client from "../../entities/client.entity";
 import { IClientEntity, IClientRes, IClientUpdate } from "../../interfaces/clients";
 import { clientResSchema } from "../../serializers/clients";
 
@@ -21,9 +21,9 @@ const updateClientService = async (
 
   const clientAfterUpdate = await clientRepository.save(updatedClient as Client);
 
-  const modifiedUser = clientResSchema.parse(clientAfterUpdate);
+  const modifiedClient = clientResSchema.parse(clientAfterUpdate);
   
-  return modifiedUser as IClientRes;
+  return modifiedClient as IClientRes;
 };
 
 export default updateClientService

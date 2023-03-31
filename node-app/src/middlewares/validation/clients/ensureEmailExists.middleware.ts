@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import AppDataSource from "../../../data-source";
-import { Client } from "../../../entities";
+import Client from "../../../entities/client.entity";
 import { AppError } from "../../../errors";
 
 const ensureClientEmailExistsMiddleware = async (

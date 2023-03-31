@@ -1,17 +1,19 @@
 import { getRounds, hashSync } from "bcryptjs";
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { normalize } from "../scripts";
-import {v4 as uuid} from "uuid";
+import { v4 as uuid } from "uuid";
+import Contact from "../entities/contact.entity";
 
 
 @Entity("clients")
-class Client {
+export default class Client {
   @PrimaryGeneratedColumn("uuid")
   id: string;
-  @BeforeInsert()
-  addUUID() {
-    this.id = uuid();
-  }
+  // FOR SQLITE
+  // @BeforeInsert()
+  // addUUID() {
+  //   this.id = uuid();
+  // }
 
   @Column({type: "varchar", length: 127, unique: true})
   email: string;
@@ -38,13 +40,16 @@ class Client {
   full_name: string
 
   @Column({type: "bigint"})
-  phone: number
+  phone: number | string
 
   @Column({default: false})
   isAdm: boolean
 
   @CreateDateColumn()
   createdAt: Date
-}
 
-export default Client
+  @OneToMany(()=> Contact, (ct) => ct.client, {
+    cascade: true
+  })
+  contacts: Contact[]
+}

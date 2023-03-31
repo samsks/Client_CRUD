@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { AppError } from "../../../errors";
 import AppDataSource from "../../../data-source";
-import { Contact } from "../../../entities";
+import Contact from "../../../entities/contact.entity";
 
 const ensureContactIdExistsMiddleware = async (
   req: Request,

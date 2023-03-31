@@ -1,7 +1,7 @@
 import { DeepPartial, Repository } from "typeorm";
 import { z } from "zod";
-import { Client } from "../../entities";
-import { clientReqSchema, clientResSchema } from "../../serializers/clients/client.serializer";
+import Client from "../../entities/client.entity";
+import { clientReqSchema, clientResSchema } from "../../serializers/clients";
 
 type IClientEntity = Repository<Client>
 

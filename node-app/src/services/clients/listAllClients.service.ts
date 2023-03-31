@@ -1,13 +1,13 @@
 import { Repository } from "typeorm";
 import AppDataSource from "../../data-source";
-import { Client } from "../../entities";
+import Client from "../../entities/client.entity";
 import { IClientRes } from "../../interfaces/clients";
 import { clientListResSchema } from "../../serializers/clients";
 
 const listAllClientsService = async (): Promise<IClientRes[] | undefined> => {
-  const userRepository: Repository<Client> = AppDataSource.getRepository(Client);
+  const clientRepository: Repository<Client> = AppDataSource.getRepository(Client);
 
-  const allClients = await userRepository.find();
+  const allClients = await clientRepository.find();
 
   const allClientsResponse = clientListResSchema.parse(allClients);
 
