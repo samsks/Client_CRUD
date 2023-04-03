@@ -2,7 +2,7 @@
 
 Este é um projeto com duas partes: uma aplicação Node js e uma aplicação React.
 
-## Django App
+## Node App
 
 Veja as instruções de instalação e uso da aplicação Node em [node-app/README.md](node-app/README.md).
 
