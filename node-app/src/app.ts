@@ -8,6 +8,7 @@ import "dotenv/config";
 
 const app = express()
 app.use(express.json())
+
 const API_DETAIL = process.env.API_DETAIL || "/api/v1";
 
 app.use(`${API_DETAIL}/clients`, clientRouter)
